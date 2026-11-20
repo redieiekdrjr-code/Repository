@@ -43,7 +43,7 @@ fun NeuroHubApp() {
     var input by remember { mutableStateOf("") }
     val messages = remember {
         mutableStateListOf(
-            ChatMessage("Привет! Я НейроХаб — твой AI-помощник. Пока я работаю в демо-режиме. Скоро подключим настоящую нейросеть!", false)
+            ChatMessage("Привет! Я НейроХаб. Рад знакомству! Напиши, чем могу помочь.", false)
         )
     }
 
@@ -66,7 +66,7 @@ fun NeuroHubApp() {
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
                     Text("НЕЙРОХАБ", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = Color.White)
-                    Text("Твой личный искусственный интеллект", fontSize = 11.sp, color = SoftText)
+                    Text("Твой интеллектуальный помощник", fontSize = 11.sp, color = SoftText)
                 }
                 Surface(color = Color(0xFF193A38), shape = CircleShape) {
                     Text("● ONLINE", Modifier.padding(horizontal = 10.dp, vertical = 6.dp), color = Color(0xFF71E0B2), fontSize = 10.sp)
@@ -74,7 +74,7 @@ fun NeuroHubApp() {
             }
 
             Spacer(Modifier.height(22.dp))
-            Text("ТВОЙ AI-ПРОСТРАНСТВО", color = SoftText, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+            Text("ТВОЁ ПРОСТРАНСТВО", color = SoftText, fontSize = 11.sp, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(10.dp))
 
             LazyColumn(
@@ -126,7 +126,7 @@ fun NeuroHubApp() {
                             val text = input.trim()
                             if (text.isNotEmpty()) {
                                 messages.add(ChatMessage(text, true))
-                                messages.add(ChatMessage("Я получил твоё сообщение: «$text». Это пока демонстрационный режим. Подключение настоящего ИИ добавим следующим шагом.", false))
+                                messages.add(ChatMessage("Я получил твоё сообщение: «$text». Сейчас доступен демонстрационный режим. Подключение настоящего ИИ будет добавлено отдельно.", false))
                                 input = ""
                             }
                         },
@@ -135,7 +135,7 @@ fun NeuroHubApp() {
                 }
             }
             Spacer(Modifier.height(8.dp))
-            Text("NEUROHUB • BUILD 1.0 • DEMO", Modifier.align(Alignment.CenterHorizontally), color = Color(0xFF7884AA), fontSize = 9.sp)
+            Text("NEUROHUB • BUILD 2.0", Modifier.align(Alignment.CenterHorizontally), color = Color(0xFF7884AA), fontSize = 9.sp)
         }
     }
 }
